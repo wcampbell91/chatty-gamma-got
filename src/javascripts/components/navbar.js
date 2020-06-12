@@ -4,7 +4,7 @@ import messageData from '../helpers/data/messageData';
 import messageBuilder from './messageBuilder';
 
 const addMessageEvent = (e) => {
-  e.preventDefault();
+  e.preventDefault(e);
   const newMessage = e.target.previousElementSibling.value;
   messageData.setMessages(newMessage);
   messageBuilder.messageBuilder();
