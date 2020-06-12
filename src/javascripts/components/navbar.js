@@ -1,5 +1,14 @@
 import utils from '../helpers/utils';
 import './navbar.scss';
+import messageData from '../helpers/data/messageData';
+import messageBuilder from './messageBuilder';
+
+const addMessageEvent = (e) => {
+  e.preventDefault();
+  const newMessage = e.target.previousElementSibling.value;
+  messageData.setMessages(newMessage);
+  messageBuilder.messageBuilder();
+};
 
 const buildNavbar = () => {
   const domString = `
@@ -15,26 +24,26 @@ const buildNavbar = () => {
               <div class="form-row align-items-center">
                 <div class="col-10">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                   <label class="btn btn-secondary active">
-                    <input type="radio" name="options" id="user1"> johnsnow420
-                   </label>
-                   <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="user2"> joffreySucks
-                   </label>
-                   <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="user3"> tyrionRocks69
-                   </label>
-                   <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="user4"> nearlyheadlessned
-                   </label>
-                   <label class="btn btn-secondary">
-                    <input type="radio" name="options" id="user5"> thesebootsweremadeforwhitewalking
-                   </label>
+                    <label class="btn btn-secondary active">
+                      <input type="radio" name="options" id="user1"> johnsnow420
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="user2"> joffreySucks
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="user3"> tyrionRocks69
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="user4"> nearlyheadlessned
+                    </label>
+                    <label class="btn btn-secondary">
+                      <input type="radio" name="options" id="user5"> thesebootsweremadeforwhitewalking
+                    </label>
                   </div>
-                  <input type="message" class="form-control" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
+                  <input type="text" class="form-control" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
+                  <button id="submitMessage" type="submit" style="display: none"></button>
                 </div>
                 <div class="col">
-                  <button type="submit" class="btn btn-primary float-right" id="sendButton">Send</button>
                 </div>
               </div>
           </form>
@@ -44,7 +53,17 @@ const buildNavbar = () => {
   </div>
   `;
 
+  $('#inputForm').on('keydown', (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      $('#submitMessage').click();
+    }
+    return false;
+  });
+
   utils.printToDom('#navbar', domString);
 };
+
+$('body').on('click', '#submitMessage', addMessageEvent);
 
 export default { buildNavbar };

@@ -28,4 +28,8 @@ const messages = [
 
 const getMessages = () => messages;
 
-export default { getMessages };
+const setMessages = (newMessage) => {
+  messages.push({ user: '', message: newMessage, timestamp: 'WIP' });
+};
+
+export default { getMessages, setMessages };
