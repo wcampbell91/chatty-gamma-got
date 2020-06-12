@@ -3,12 +3,6 @@ import './navbar.scss';
 import messageData from '../helpers/data/messageData';
 import messageBuilder from './messageBuilder';
 
-const addMessageEvent = (e) => {
-  e.preventDefault(e);
-  const newMessage = e.target.previousElementSibling.value;
-  messageData.setMessages(newMessage);
-  messageBuilder.messageBuilder();
-};
 
 const buildNavbar = () => {
   const domString = `
@@ -25,7 +19,7 @@ const buildNavbar = () => {
                 <div class="col-10">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id="user1"> johnsnow420
+                      <input type="radio" name="options" id=""> johnsnow420
                     </label>
                     <label class="btn btn-secondary">
                       <input type="radio" name="options" id="user2"> joffreySucks
@@ -40,7 +34,7 @@ const buildNavbar = () => {
                       <input type="radio" name="options" id="user5"> thesebootsweremadeforwhitewalking
                     </label>
                   </div>
-                  <input type="text" class="form-control" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
+                  <input type="text" class="form-control inputField" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
                   <button id="submitMessage" type="submit" style="display: none"></button>
                 </div>
                 <div class="col">
@@ -64,6 +58,20 @@ const buildNavbar = () => {
   utils.printToDom('#navbar', domString);
 };
 
+
+const addMessageEvent = (e) => {
+  e.preventDefault(e);
+  console.error(e);
+  const newMessage = e.target.previousElementSibling.value;
+
+  messageData.setMessages(newMessage);
+
+  buildNavbar();
+  messageBuilder.messageBuilder();
+};
+
+
 $('body').on('click', '#submitMessage', addMessageEvent);
+
 
 export default { buildNavbar };

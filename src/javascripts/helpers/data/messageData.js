@@ -29,7 +29,7 @@ const messages = [
 const getMessages = () => messages;
 
 const setMessages = (newMessage) => {
-  messages.push({ user: '', message: newMessage, timestamp: 'WIP' });
+  messages.unshift({ user: '', message: newMessage, timestamp: 'WIP' });
 };
 
 export default { getMessages, setMessages };
