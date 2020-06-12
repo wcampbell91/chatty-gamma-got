@@ -28,6 +28,8 @@ const messages = [
 
 const getMessages = () => messages;
 
-const setMessages = (message) => messages.shift(message);
+const setMessages = (newMessage) => {
+  messages.push({ user: '', message: newMessage, timestamp: 'WIP' });
+};
 
 export default { getMessages, setMessages };
