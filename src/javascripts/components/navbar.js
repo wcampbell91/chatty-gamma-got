@@ -1,7 +1,7 @@
 import utils from '../helpers/utils';
 
 const addMessageEvent = (e) => {
-  console.error(e, 'in add Message event');
+  e.preventDefault();
 };
 
 const buildNavbar = () => {
@@ -17,10 +17,10 @@ const buildNavbar = () => {
           <form>
               <div class="form-row align-items-center">
                 <div class="col-10">
-                  <input id="messageSubmit" type="message" class="form-control" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
+                  <input type="text" class="form-control" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
+                  <button id="submitMessage" type="submit" style="display: none"></button>
                 </div>
                 <div class="col">
-                  <button type="submit" class="btn btn-primary float-right" id="sendButton">Send</button>
                 </div>
               </div>
           </form>
@@ -30,16 +30,17 @@ const buildNavbar = () => {
   </div>
   `;
 
-  $('input').keypress((e) => {
-    if (e.which === 13) {
-      e.preDefault();
-      $('#messageSubmit').submit(addMessageEvent());
+  $('#inputForm').on('keydown', (e) => {
+    if (e.keyCode === 13) {
+      e.preventDefault();
+      $('#submitMessage').click();
     }
+    return false;
   });
+
   utils.printToDom('#navbar', domString);
 };
-// $('body').on(
 
-// $('body').on('keypress', '#messageSubmit', addMessagee());
+$('body').on('click', '#submitMessage', addMessageEvent);
 
 export default { buildNavbar };

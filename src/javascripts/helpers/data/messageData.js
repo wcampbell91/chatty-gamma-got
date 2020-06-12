@@ -28,4 +28,6 @@ const messages = [
 
 const getMessages = () => messages;
 
-export default { getMessages };
+const setMessages = (message) => messages.shift(message);
+
+export default { getMessages, setMessages };
