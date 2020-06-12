@@ -16,7 +16,7 @@ const buildNavbar = () => {
                 <div class="col-10">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                    <label class="btn btn-secondary active">
-                    <input type="radio" name="options" id="user1" checked> johnsnow420
+                    <input type="radio" name="options" id="user1"> johnsnow420
                    </label>
                    <label class="btn btn-secondary">
                     <input type="radio" name="options" id="user2"> joffreySucks
