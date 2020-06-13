@@ -1,3 +1,4 @@
+// import { relativeTimeRounding } from 'moment';
 import utils from '../helpers/utils';
 import './navbar.scss';
 import messageData from '../helpers/data/messageData';
@@ -18,20 +19,20 @@ const buildNavbar = () => {
               <div class="form-row align-items-center">
                 <div class="col-10">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                    <label class="btn btn-secondary active">
-                      <input type="radio" name="options" id=""> johnsnow420
+                    <label class="btn btn-secondary myButton">
+                      <input type="radio" class="myRadioButton" name="options" id="user1"> johnsnow420
                     </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="user2"> joffreySucks
+                    <label class="btn btn-secondary myButton">
+                      <input type="radio" class="myRadioButton" name="options" id="user2"> joffreySucks
                     </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="user3"> tyrionRocks69
+                    <label class="btn btn-secondary myButton">
+                      <input type="radio" class="myRadioButton" name="options" id="user3"> tyrionRocks69
                     </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="user4"> nearlyheadlessned
+                    <label class="btn btn-secondary myButton">
+                      <input type="radio" class="myRadioButton" name="options" id="user4"> nearlyheadlessned
                     </label>
-                    <label class="btn btn-secondary">
-                      <input type="radio" name="options" id="user5"> thesebootsweremadeforwhitewalking
+                    <label class="btn btn-secondary myButton" >
+                      <input type="radio" class="myRadioButton" name="options" id="user5"> thesebootsweremadeforwhitewalking
                     </label>
                   </div>
                   <input type="text" class="form-control inputField" id="inputForm" aria-describedby="emailHelp" placeholder="Type Message Here">
@@ -46,6 +47,7 @@ const buildNavbar = () => {
     </div>
   </div>
   `;
+
 
   $('#inputForm').on('keydown', (e) => {
     if (e.keyCode === 13) {
@@ -70,6 +72,11 @@ const addMessageEvent = (e) => {
   messageBuilder.messageBuilder();
 };
 
+$('body').on('click', '.myRadioButton', (e) => {
+  const buttonClass = e.target.closest('.btn');
+  $(buttonClass).toggleClass('active');
+  console.error(e);
+});
 
 $('body').on('click', '#submitMessage', addMessageEvent);
 
