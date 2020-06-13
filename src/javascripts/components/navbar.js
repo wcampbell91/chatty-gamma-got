@@ -61,7 +61,6 @@ const buildNavbar = () => {
 
 
 const addMessageEvent = (e) => {
-  e.preventDefault();
   const newMessage = {
     user: '',
     message: e.target.previousElementSibling.value,
@@ -79,13 +78,4 @@ const addMessageEvent = (e) => {
   messageBuilder.messageBuilder();
 };
 
-$('body').on('click', '.myRadioButton', (e) => {
-  const buttonClass = e.target.closest('.btn');
-  $(buttonClass).toggleClass('active');
-  $(buttonClass).toggleClass('thisIsSelected');
-});
-
-$('body').on('click', '#submitMessage', addMessageEvent);
-
-
-export default { buildNavbar };
+export default { buildNavbar, addMessageEvent };
