@@ -1,6 +1,17 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~@fortawesome/fontawesome-free/css/all.min.css";
+@import "styles";
 
 body {
-  background-color: slategray;
+  background-color: $light;
+  // background-image: url("https://www.itl.cat/pics/b/23/239660_minimalist-gaming-wallpaper.jpg");
+}
+
+#messages {
+  height: 450px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  background-color: $lightModeGrey;
+  border: 3px solid $lightModeBorder;
+  padding: 20px;
 }
