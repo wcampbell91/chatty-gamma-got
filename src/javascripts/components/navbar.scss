@@ -8,6 +8,11 @@
   padding: 3px;
 }
 
+.navContainer {
+  display: flex;
+  flex-flow: row wrap;
+}
+
 .input-field {
   padding: 2px;
 }

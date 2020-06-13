@@ -1,13 +1,12 @@
-// import { relativeTimeRounding } from 'moment';
 import utils from '../helpers/utils';
 import './navbar.scss';
 import messageData from '../helpers/data/messageData';
 import messageBuilder from './messageBuilder';
-
+import userData from '../helpers/data/userData';
 
 const buildNavbar = () => {
   const domString = `
-  <div class="row>
+  <div class="row navContainer">
     <div class="col-12">
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="#">
@@ -17,7 +16,7 @@ const buildNavbar = () => {
         <div class="col-10">
           <form>
               <div class="form-row align-items-center">
-                <div class="col-10">
+                <div class="col-10 userButtons">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary myButton">
                       <input type="radio" class="myRadioButton" name="options" id="user1"> johnsnow420
@@ -62,9 +61,17 @@ const buildNavbar = () => {
 
 
 const addMessageEvent = (e) => {
-  e.preventDefault(e);
-  console.error(e);
-  const newMessage = e.target.previousElementSibling.value;
+  e.preventDefault();
+  const newMessage = {
+    user: '',
+    message: e.target.previousElementSibling.value,
+  };
+
+  const b = document.querySelector('.active');
+  const userId = b.childNodes[1].id;
+  const users = userData.getUsers();
+  const tempUserObj = users.find((user) => user.id === userId);
+  newMessage.user = tempUserObj.name;
 
   messageData.setMessages(newMessage);
 
@@ -75,7 +82,7 @@ const addMessageEvent = (e) => {
 $('body').on('click', '.myRadioButton', (e) => {
   const buttonClass = e.target.closest('.btn');
   $(buttonClass).toggleClass('active');
-  console.error(e);
+  $(buttonClass).toggleClass('thisIsSelected');
 });
 
 $('body').on('click', '#submitMessage', addMessageEvent);
