@@ -3,15 +3,38 @@
 @import "styles";
 
 body {
-  background-color: $light;
-  // background-image: url("https://www.itl.cat/pics/b/23/239660_minimalist-gaming-wallpaper.jpg");
+  background-color: $white;
+  background-image: url(https://store-images.s-microsoft.com/image/apps.47513.68093564955993858.ab11cbe0-93be-4c03-a739-7cfbd10c8d41.a670561f-fd06-4037-a6ee-65e866948db7?mode=scale&q=90&h=1080&w=1920);
 }
 
 #messages {
   height: 450px;
   margin-top: 10px;
   overflow-y: scroll;
-  background-color: $lightModeGrey;
-  border: 3px solid $lightModeBorder;
+  background-color: rgba(216, 216, 216, 0.7);
+  border: 3px solid $lightModeGrey;
   padding: 20px;
+}
+
+.card {
+  border: solid black 2px;
+  margin-bottom: 5px; 
+}
+
+.darkMode {
+  color: $darkModeText;
+  #page {
+      background-color: $darkModeBlack;
+  }
+  #messages {
+      background-color: $darkModeClear;
+      border: 3px solid $darkModeBlack;
+  }
+  .card {
+    background-color: $darkModeClear;
+  }
+}
+
+.lrgTxt {
+  font-size: x-large;
 }

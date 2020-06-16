@@ -1,13 +1,13 @@
 const darkModeCheckBox = () => {
-  if (document.getElementById('darkTheme').checked === true) {
+  if (document.getElementById('darkMode').checked === true) {
     document.getElementById('page').classList.add('darkMode');
   } else {
     document.getElementById('page').classList.remove('darkMode');
   }
 };
 
-const darkModeChecked = () => {
-  $('#darkTheme').click(darkModeCheckBox);
+const darkModeEvent = () => {
+  $('#darkMode').click(darkModeCheckBox);
 };
 
-export default { darkModeChecked, darkModeCheckBox };
+export default { darkModeEvent, darkModeCheckBox };
