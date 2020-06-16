@@ -16,6 +16,10 @@ body {
   padding: 20px;
 }
 
+#navbar {
+  background-color: $white;
+}
+
 .card {
   border: solid black 2px;
   margin-bottom: 5px; 
@@ -32,6 +36,9 @@ body {
   }
   .card {
     background-color: $darkModeClear;
+  }
+  #navbar {
+    background-color: $darkModeBlack;
   }
 }
 

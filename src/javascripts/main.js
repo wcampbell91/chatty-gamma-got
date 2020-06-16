@@ -5,6 +5,7 @@ import settings from './components/settings';
 import clearMessages from './components/clearMessages';
 import darkMode from './components/darkMode';
 import largeText from './components/largeText';
+import events from './components/events';
 
 const init = () => {
   navbar.buildNavbar();
@@ -13,6 +14,7 @@ const init = () => {
   clearMessages.clearEvent();
   darkMode.darkModeEvent();
   largeText.largeTextEvent();
+  events.clickEvents();
 };
 
 init();
