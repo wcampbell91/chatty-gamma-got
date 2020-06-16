@@ -8,7 +8,7 @@ const buildNavbar = () => {
   const domString = `
   <div class="row navContainer">
     <div class="col-12">
-      <nav class="navbar navbar-light bg-light">
+      <nav class="navbar">
         <a class="navbar-brand" href="#">
           <i class="fa-lg fas fa-shield-alt"></i>
           GOT
