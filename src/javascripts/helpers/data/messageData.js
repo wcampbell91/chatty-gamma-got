@@ -1,6 +1,6 @@
 const messages = [
   {
-    user: 'johnsnow420',
+    user: 'johnsnow400',
     message: 'Somebody asked me if I wanted Season 8 on Bluray.  I said I dont want it',
     timestamp: 'WIP',
   },
@@ -10,7 +10,7 @@ const messages = [
     timestamp: 'WIP',
   },
   {
-    user: 'tyrionRocks69',
+    user: 'tyrionRocks111',
     message: 'Burp',
     timestamp: 'WIP',
   },

@@ -20,5 +20,4 @@ const messageBuilder = () => {
   utils.printToDom('#messages', domString);
 };
 
-
 export default { messageBuilder };

@@ -19,13 +19,13 @@ const buildNavbar = () => {
                 <div class="col-10 userButtons">
                   <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary myButton">
-                      <input type="radio" class="myRadioButton" name="options" id="user1"> johnsnow420
+                      <input type="radio" class="myRadioButton" name="options" id="user1"> johnsnow400
                     </label>
                     <label class="btn btn-secondary myButton">
                       <input type="radio" class="myRadioButton" name="options" id="user2"> joffreySucks
                     </label>
                     <label class="btn btn-secondary myButton">
-                      <input type="radio" class="myRadioButton" name="options" id="user3"> tyrionRocks69
+                      <input type="radio" class="myRadioButton" name="options" id="user3"> tyrionRocks111
                     </label>
                     <label class="btn btn-secondary myButton">
                       <input type="radio" class="myRadioButton" name="options" id="user4"> nearlyheadlessned
@@ -47,7 +47,6 @@ const buildNavbar = () => {
   </div>
   `;
 
-
   $('#inputForm').on('keydown', (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -58,7 +57,6 @@ const buildNavbar = () => {
 
   utils.printToDom('#navbar', domString);
 };
-
 
 const addMessageEvent = (e) => {
   const newMessage = {
